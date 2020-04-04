@@ -4,7 +4,7 @@ PATH
     ny_times_searcher (0.1.0)
       activesupport (= 4.2.0)
       colorize
-      nokogiri (= 1.10.4)
+      nokogiri (= 1.10.9)
       pry
       rake (~> 12.0)
 
@@ -26,14 +26,14 @@ GEM
     method_source (0.9.2)
     mini_portile2 (2.4.0)
     minitest (5.14.0)
-    nokogiri (1.10.4)
+    nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
     pry (0.12.2)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
     rake (12.3.2)
     thread_safe (0.3.6)
-    tzinfo (1.2.6)
+    tzinfo (1.2.7)
       thread_safe (~> 0.1)
 
 PLATFORMS
@@ -41,7 +41,7 @@ PLATFORMS
 
 DEPENDENCIES
   colorize
-  nokogiri (= 1.10.4)
+  nokogiri (= 1.10.9)
   ny_times_searcher!
   pry
   rake (~> 12.0)

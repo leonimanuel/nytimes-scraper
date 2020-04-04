@@ -5,5 +5,5 @@ gemspec
 
 gem "rake", "~> 12.0"
 gem 'pry'
-gem 'nokogiri', '1.10.4'
+gem 'nokogiri', '1.10.9'
 gem "colorize"

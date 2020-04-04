@@ -31,6 +31,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency "activesupport", "4.2.0"
   spec.add_dependency "rake", "~> 12.0"
   spec.add_dependency 'pry'
-  spec.add_dependency 'nokogiri', '1.10.4'
+  spec.add_dependency 'nokogiri', '1.10.9'
   spec.add_dependency "colorize"
 end
