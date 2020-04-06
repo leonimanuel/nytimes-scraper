@@ -88,8 +88,8 @@ class NyTimesSearch::CLI
 	end
 
 	def show_search_match(search_match)
-		puts search_match.search_match_id
-		puts search_match.context
+		puts 
+		puts "#{search_match.search_match_id}: #{search_match.context}"
 		puts "#{"ARTICLE TITLE:".red} #{search_match.article_title.gsub(" - The New York Times", "")}"
 		puts "#{"ARTICLE AUTHOR(S):".red} #{search_match.article_author.join(", ")}"
 		puts "#{"ARTICLE DATE:".red} #{search_match.article_date.split("T").first}"
