@@ -17,7 +17,7 @@ class NyTimesSearch::CLI
 	end
 
 	def display_sections
-		puts "\n Please choose from one of these sections"
+		puts "\n Please choose from one of these sections. To search all sections, type 'all'"
 
 		NyTimesSearch::Search.section_names.each do |name|
 			print "   #{name}   "
