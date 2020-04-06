@@ -56,9 +56,10 @@ class NyTimesSearch::Scraper
         if case_match
 
             new_par = par.text.gsub(case_match,case_match.green)
-            new_par = new_par.gsub("â\u0080\u009C", "\"").gsub("â\u0080\u009D", "\"").gsub("â\u0080\u0099", "'").gsub("â\u0080\u0094", "—")
+            new_par = new_par.gsub("â\u0080\u009C", "\"").gsub("â\u0080\u009D", "\"").gsub("â\u0080\u0098", "'").gsub("â\u0080\u0099", "'").gsub("â\u0080\u0094", "—")
 
-            title = article_doc.css("title").text.gsub("â\u0080\u009C", "\"").gsub("â\u0080\u009D", "\"").gsub("â\u0080\u0099", "'").gsub("â\u0080\u0094", "—")
+            title = article_doc.css("title").text.gsub("â\u0080\u009C", "\"").gsub("â\u0080\u009D", "\"").gsub("â\u0080\u0098", "'").gsub("â\u0080\u0099", "'").gsub("â\u0080\u0094", "—")
+            # binding.pry
             author = article_doc.css(".css-1fv7b6t.e1jsehar1 span").collect { |span| span.text}
             date = article_doc.css(".css-1xtbm1r.epjyd6m3").css("time @datetime").to_s#(".css-ld3wwf.e16638kd1").css(".css-1sbuyqj.e16638kd4").text
 
