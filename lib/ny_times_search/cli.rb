@@ -11,7 +11,7 @@ class NyTimesSearch::CLI
 
 	def greeting
 		puts "Welcome to the New York Times Searcher!".yellow
-		puts "Search any New York Times section for any search term (case insensitive)"
+		puts "Search any New York Times section for any search term"
 		NyTimesSearch::Search.get_sections
 		display_sections
 	end
@@ -41,7 +41,7 @@ class NyTimesSearch::CLI
 			puts
 		end
 
-		puts "Please enter a search term"
+		puts "Please enter a search term (case insensitive)"
 		search_input = gets.strip
 		puts
 		
@@ -88,20 +88,17 @@ class NyTimesSearch::CLI
 	end
 
 	def show_search_match(search_match)
-		puts 
-		puts "#{search_match.search_match_id}: #{search_match.context}"
+		puts " \n#{search_match.search_match_id}: #{search_match.context}"
 		puts "#{"ARTICLE TITLE:".red} #{search_match.article_title.gsub(" - The New York Times", "")}"
-		puts "#{"ARTICLE AUTHOR(S):".red} #{search_match.article_author.join(", ")}"
-		puts "#{"ARTICLE DATE:".red} #{search_match.article_date.split("T").first}"
-		puts "#{"ARTICLE LINK:".red} #{search_match.article_url}"
-		puts
+		puts "#{"ARTICLE AUTHOR(S):".red} #{search_match.article_author.join(", ").empty? ? "Unavailable" : search_match.article_author.join(", ")}"
+		puts "#{"ARTICLE DATE:".red} #{search_match.article_date.empty? ? "Unavailable" : search_match.article_date.split("T").first}"
+		puts "#{"ARTICLE LINK:".red} #{search_match.article_url} \n"
 	end
 
 	def show_search_summary(search)
 		puts "#{search.section_name} section search overview:"
 		puts "Total Articles scanned: #{search.article_sub_urls.count}"
 		puts "Total Hits: #{search.search_matches.count}"
-		puts "Total matching articles: #{search.search_matches.collect {|match| match.article_title}.uniq.count}"
-		puts puts		
+		puts "Total matching articles: #{search.search_matches.collect {|match| match.article_title}.uniq.count} \n \n"
 	end
 end
